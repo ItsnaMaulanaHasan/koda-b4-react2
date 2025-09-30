@@ -20,7 +20,7 @@ function DetailCharacter() {
 
   useEffect(() => {
     getDataCharacter();
-  }, [id]);
+  }, []);
 
   if (isLoading) {
     return <div className="text-center p-10">Loading...</div>;
