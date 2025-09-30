@@ -17,7 +17,6 @@ function App() {
   const handleFormSearch = (e) => {
     e.preventDefault();
     setSearchValue(e.target.search.value);
-    e.target.reset();
   };
 
   useEffect(() => {
