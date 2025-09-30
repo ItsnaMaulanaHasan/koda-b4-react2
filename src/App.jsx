@@ -34,7 +34,7 @@ function App() {
       <Search onSubmit={(e) => handleFormSearch(e)} />
       <section id="container" className="grid justify-items-center content-center gap-[20px] md:grid-cols-4 xl:grid-cols-5 p-[20px]">
         {usersFilter.map((user) => (
-          <CardUser img={user.image} name={user.name} />
+          <CardUser key={user.name} img={user.image} name={user.name} />
         ))}
       </section>
     </main>
