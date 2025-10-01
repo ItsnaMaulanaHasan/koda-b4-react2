@@ -1,3 +1,9 @@
+/**
+ *
+ * @param {React.FormHTMLAttributes<HTMLFormElement} props
+ * @returns
+ */
+
 export const Search = ({ onSubmit }) => {
   return (
     <section id="search-bar" className="justify-items-center p-[50px]">
