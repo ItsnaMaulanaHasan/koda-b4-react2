@@ -3,8 +3,7 @@ import { useParams } from "react-router-dom";
 
 function DetailCharacter() {
   const { id } = useParams();
-  const [dataCharacter, setDataCharacter] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [dataCharacter, setDataCharacter] = useState({ image: "", name: "", status: "", species: "", gender: "" });
 
   const getDataCharacter = async () => {
     try {
@@ -13,18 +12,12 @@ function DetailCharacter() {
       setDataCharacter(dataJson);
     } catch (error) {
       console.error("Gagal mengambil data:", error);
-    } finally {
-      setIsLoading(false);
     }
   };
 
   useEffect(() => {
     getDataCharacter();
   }, []);
-
-  if (isLoading) {
-    return <div className="text-center p-10">Loading...</div>;
-  }
 
   const shadowColorClass = dataCharacter.status === "Alive" ? "drop-shadow-indigo-500/100" : dataCharacter.status === "Dead" ? "drop-shadow-red-500/100" : "drop-shadow-gray-500/100";
 
